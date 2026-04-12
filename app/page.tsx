@@ -47,7 +47,7 @@ export default function NuovoOrdine() {
     return carrello.find((item) => item.prodotto.id === id)?.quantita || 0;
   };
 
-  // --- LOGICA SALVATAGGIO SU DATABASE ---
+  // --- LOGICA SALVATAGGIO SU DATABASE --- 
   const confermaOrdine = async () => {
     if (!nomeCliente || !telefonoCliente || !dataRitiro) {
       alert("Compila tutti i dati del cliente e la data di ritiro!");
