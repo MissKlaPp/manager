@@ -12,15 +12,23 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======================================================= */
+/* FIX STAMPANTE TERMICA: Rotolo continuo senza pagine bianche */
+/* ======================================================= */
+@media print {
+  @page { 
+    margin: 0; 
+    size: 80mm auto; /* Dice al browser che l'altezza è variabile! */
+  }
+  html, body { 
+    margin: 0; 
+    padding: 0;
+    height: auto; 
+  }
 }
